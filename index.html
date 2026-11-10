@@ -380,7 +380,7 @@
 <p>WhatsApp: (21) 9 98219081</p>
 <p style="font-size:.86rem">Atendimento residencial sob consulta de região, deslocamento e disponibilidade.</p>
 </div>
-<div><div class="agenda-preview" id="agenda"><span class="eyebrow">Próxima etapa</span><h3>Consulte a agenda</h3><p>Em breve, você poderá consultar a disponibilidade de horários em uma página exclusiva.</p><button aria-controls="agendaMessage" aria-expanded="false" class="btn btn-primary" id="agendaButton" type="button">Consulte a agenda</button><p class="agenda-message" hidden="" id="agendaMessage">A consulta online da agenda está em preparação. Por enquanto, você pode verificar horários diretamente pelo WhatsApp.</p></div></div>
+<div><div class="agenda-preview" id="agenda"><span class="eyebrow">Agendamento online</span><h3>Consulte a agenda</h3><p>Explore as datas e os horários disponíveis no calendário demonstrativo de agendamentos.</p><a class="btn btn-primary" href="/agenda/">Consulte a agenda</a></div></div>
 </div>
 </div>
 </section>
@@ -413,12 +413,5 @@
     if(menu) menu.classList.remove('open');
     if(toggle) toggle.setAttribute('aria-expanded','false');
   }));
-  const agendaButton=document.getElementById('agendaButton');
-  const agendaMessage=document.getElementById('agendaMessage');
-  if(agendaButton && agendaMessage) agendaButton.addEventListener('click', () => {
-    const expanding=agendaMessage.hidden;
-    agendaMessage.hidden=!expanding;
-    agendaButton.setAttribute('aria-expanded',String(expanding));
-  });
 </script></body>
 </html>
