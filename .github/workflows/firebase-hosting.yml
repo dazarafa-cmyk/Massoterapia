@@ -20,6 +20,7 @@ jobs:
       - name: Baixar arquivos do repositorio
         uses: actions/checkout@v4
 
+      # Republicacao apos atualizar a credencial de servico do Firebase
       - name: Publicar no Firebase Hosting
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
