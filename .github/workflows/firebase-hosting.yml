@@ -1,0 +1,29 @@
+name: Publicar Elisangela no Firebase Hosting
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: firebase-hosting-live
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar arquivos do repositorio
+        uses: actions/checkout@v4
+
+      - name: Publicar no Firebase Hosting
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_MASSOTERAPEUTA_E97C3 }}
+          projectId: massoterapeuta-e97c3
+          channelId: live
